@@ -15,7 +15,7 @@
         table {
             width: 500px;
             border-collapse: collapse;
-
+            position: relative;
 
         }
 
@@ -25,9 +25,26 @@
 
         }
 
+        caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            background-color: lightgrey;
+        }
+
         thead, tfoot {
-            background-color: gray;
+            background-color: #383838;
             color: white;
+        }
+
+        thead > tr > th {
+            position: sticky;
+            top: -1px;
+            background-color: #383838;
+        }
+
+        tbody > tr:nth-child(2n) {
+            background-color: lightgray;
         }
 
         td.num {
@@ -43,6 +60,7 @@
     <!--
     ANATOMIA PARA TABELAS GRANDES
     TABLE
+    CAPTION
     THEAD: Cabeça
         TR,TD,TH
     TBODY: Corpo
@@ -52,18 +70,19 @@
     -->
 
 <table>
+    <caption> População das Unidades Federativas</caption>
+
     <thead>
-        <tr>
-            <th>Estado</th>
-            <th>População</th>
-        </tr>
+            <tr>
+                <th scope="col">Estado</th>
+                <th scope="col" style="width: 50px;">População</th>
+            </tr>
     </thead>
     <tbody>
         <tr>
-            <td>São Paulo</td>
+            <td> São Paulo </td>
             <td class="num">45 919 049</td>
         </tr>
-    </tbody>
         <tr>
             <td>Minas Gerais</td>
             <td class="num">21 168 791</td>
@@ -166,16 +185,11 @@
             <td>Roraima</td>
             <td class="num">636 707</td>
         </tr>
-
-    <tfoot>
         <tr>
-            <th>Total de habitantes</th>
+            <th scope="row">Total de habitantes</th>
             <td><strong>210 147 125</strong></td>
         </tr>
-
-    </tfoot>
-</table>
-
-    
+    </tbody>
+</table> 
 </body>
 </html>
